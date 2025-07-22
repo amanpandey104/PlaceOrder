@@ -1,5 +1,14 @@
 # PlaceOrder API
 
+A backend API to place and process orders using Java, Spring Boot, MySQL, and a simulated in-memory queue.
+
+## Features
+
+- Place orders with validation
+- View all orders (paginated)
+- View and update order status
+- Async order processing
+
 DB Queries Used -
 
 CREATE DATABASE orderdb;
