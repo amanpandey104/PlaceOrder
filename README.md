@@ -33,8 +33,8 @@ URL(POST) - http://localhost:8080/api/orders/place
 Body(JSON) -
 {
 "customerName": "Aman Pandey",
-"items": "Pizza, Coke",
-"totalAmount": 350.0,
+"items": "Football, Barcelona Jersey",
+"totalAmount": 8350.0,
 "orderTime": "2025-07-22T14:30:00",
 "status": "PENDING"
 }
