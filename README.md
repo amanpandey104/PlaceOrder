@@ -9,7 +9,7 @@ A backend API to place and process orders using Java, Spring Boot, MySQL, and a 
 - View and update order status
 - Async order processing
 
-DB Queries Used -
+### DB Queries Used
 
 CREATE DATABASE orderdb;
 
@@ -26,7 +26,7 @@ status VARCHAR(100) NOT NULL
 
 SELECT \* FROM orders;
 
-Payload -
+### Payload
 
 #Place Order#
 URL(POST) - http://localhost:8080/api/orders/place
