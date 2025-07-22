@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import placeorder.app.placeorder.dto.OrderDTO;
 import placeorder.app.placeorder.entity.OrderEntity;
+import placeorder.app.placeorder.exception.OrderNotFoundException;
 import placeorder.app.placeorder.repository.OrderRepository;
 import placeorder.app.placeorder.service.IOrderService;
 
@@ -33,14 +34,14 @@ public class OrderServiceImpl implements IOrderService {
     @Override
     public String fetchOrderStatus(Long id) {
         OrderEntity orderEntity = orderRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Order not found"));
+                .orElseThrow(() -> new OrderNotFoundException(id));
         return orderEntity.getStatus();
     }
     
     @Override
     public void updateOrderStatus(Long id, String status) {
         OrderEntity orderEntity = orderRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Order not found"));
+                .orElseThrow(() -> new OrderNotFoundException(id));
         orderEntity.setStatus(status);
         orderRepository.save(orderEntity);
     }
